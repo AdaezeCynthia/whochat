@@ -10,7 +10,7 @@ const Login = () => {
           social media mavericks! 📱✨ Get ready to dive into a world of endless memes, epic stories, 
           and all things share-worthy. Let's make your feed the envy of the digital universe! 🚀
           </p>
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-active btn-neutral">Login</button>
         </div>
       </div>
     </div>
