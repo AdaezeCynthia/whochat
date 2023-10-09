@@ -5,6 +5,7 @@ const Sendmessage = () => {
 
   const handleSm = (e) => {
     e.preventDefault();
+    setValue("");
     console.log(value);
   };
 
@@ -13,7 +14,7 @@ const Sendmessage = () => {
       className="bg-gray-200 fixed bottom-0 w-full 
     py-10 shadow-lg"
     >
-      <form onSubmit={handleSm} className="containerWrap flex">
+      <form onSubmit={handleSm} className="px-2 placeholder:containerWrap flex">
         <input
           value={value}
           onChange={(e) => setValue(e.target.value)}
