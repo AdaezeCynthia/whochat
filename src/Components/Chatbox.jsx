@@ -6,11 +6,13 @@ const Chatbox = () => {
   const messages =[
     {
       id:1,
-      message:"Hello there"
+      text:"Hello there",
+      name: 'Ada'
     },
     {
       id:2,
-      message:"Hi"
+      text:"Hi",
+      name: 'Eze'
     }
   ]
   return (
