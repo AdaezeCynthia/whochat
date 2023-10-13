@@ -1,14 +1,19 @@
 import Login from "./pages/Login";
 import Navbar from "./Components/Navbar";
 import Chatroom from "./pages/Chatroom";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Navbar />
-      {/*Login/>*/}
-      <Chatroom/>
+
+      <Routes>
+        <Route path='/' element={<Login/>}/>
+        <Route path = '/chat' element = { <Chatroom/>}/>
+      </Routes>
+     
+     
 
     </div>
   );
