@@ -3,10 +3,11 @@ import Navbar from "./Components/Navbar";
 import Chatroom from "./pages/Chatroom";
 import { Route, Routes } from "react-router-dom";
 import { PrivateRoutes } from "./Routes/PrivateRoutes";
+import { AuthProvider } from "./Context/AuthContext";
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <Navbar />
 
       <Routes>
@@ -19,7 +20,7 @@ function App() {
      
      
 
-    </div>
+    </AuthProvider>
   );
 }
 
