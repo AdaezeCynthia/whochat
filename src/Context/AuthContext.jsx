@@ -10,6 +10,7 @@ export const AuthProvider = ({children}) => {
 
 const siginWithGoogle = () => {
     const provider = new GoogleAuthProvider();
+    signInWithRedirect(auth, provider);
 }
 
 
@@ -18,7 +19,8 @@ const siginWithGoogle = () => {
 
     const value ={
         currentUser,
-        setCurentUser
+        setCurentUser,
+        siginWithGoogle
     }
 
 
