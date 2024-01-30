@@ -1,16 +1,15 @@
-
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDi6zlPsinVoAw54LYkNzwLOhbK9Ki8hE4",
-  authDomain: "instantchat-f4cb0.firebaseapp.com",
-  projectId: "instantchat-f4cb0",
-  storageBucket: "instantchat-f4cb0.appspot.com",
-  messagingSenderId: "629077109103",
-  appId: "1:629077109103:web:5be0911a616b2ad915609a"
+  apiKey: "AIzaSyDa5HIC_DK7FtHySvYnW4dPYHxi6c3f6nM",
+  authDomain: "adachat-e861f.firebaseapp.com",
+  projectId: "adachat-e861f",
+  storageBucket: "adachat-e861f.appspot.com",
+  messagingSenderId: "64234483857",
+  appId: "1:64234483857:web:7b4c63f41ee9b34fddcf30"
 };
 
 // Initialize Firebase

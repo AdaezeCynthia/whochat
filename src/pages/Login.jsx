@@ -2,16 +2,25 @@ import React from "react";
 import { UserAuth } from "../Context/AuthContext";
 
 const Login = () => {
- const{currentUser} =UserAuth ();
- console.log(currentUser, signinWithGoogle)
+ const{currentUser, signInWithGoogle} = UserAuth ();
+
+
+
+
+
+ 
 
 const handleLogin = async () => {
-  try{
-     await signinWithGoogle();
+  try {
+     await signInWithGoogle();
   } catch(error){
     console.log(error)
   }
 }
+
+
+
+
 
 
   return (
@@ -23,7 +32,7 @@ const handleLogin = async () => {
           social media mavericks! 📱✨ Get ready to dive into a world of endless memes, epic stories, 
           and all things share-worthy. Let's make your feed the envy of the digital universe! 🚀
           </p>
-          <button onClick={handleLogin} className="btn btn-active btn-neutral">Login</button>
+          <button onClick={handleLogin} className="btn btn-active btn-neutral">Login With Google</button>
         </div>
       </div>
     </div>
