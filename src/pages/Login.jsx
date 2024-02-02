@@ -3,6 +3,7 @@ import { UserAuth } from "../Context/AuthContext";
 
 const Login = () => {
  const{currentUser, signInWithGoogle} = UserAuth ();
+ console.log (currentUser)
 
 
 

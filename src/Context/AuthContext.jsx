@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { createContext, useContext, useEffect, useState } from "react";
+import { GoogleAuthProvider, onAuthStateChanged, signInWithRedirect } from "firebase/auth";
 import {auth} from  "../Firebase";
 
 const AuthContext = createContext();
@@ -23,7 +23,15 @@ const signInWithGoogle = () => {
         setCurentUser,
         signInWithGoogle
     }
+   
 
+    //set current user 
+    useEffect (() => {
+             const unsubscribe =onAuthStateChanged(auth, (user) =>{
+                setCurentUser(user); 
+             });
+             return unsubscribe; 
+    }, []);
 
 
     return(
