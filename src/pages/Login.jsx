@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { UserAuth } from "../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate ();
  const{currentUser, signInWithGoogle} = UserAuth ();
  console.log (currentUser)
 
@@ -19,6 +21,13 @@ const handleLogin = async () => {
   }
 }
 
+
+
+useEffect(() => {
+if(currentUser){
+  navigate ("/chat")
+}
+},[currentUser]);
 
 
 
