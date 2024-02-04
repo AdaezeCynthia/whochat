@@ -4,8 +4,15 @@ import { UserAuth } from '../Context/AuthContext'
 const Navbar = () => {
   const {currentUser, logout} = UserAuth();
 
-
-const handle
+ 
+const handleLogout = async () => {
+  try {
+await logout();
+    }
+    catch(error) {
+      console.log(error)
+  }
+}
 
 
 
@@ -14,7 +21,7 @@ const handle
     <div className=' navbar bg-neutral text-neutral-content'>
         <div className="containerWrap flex justify-between">
   <a className="btn btn-ghost normal-case text-xl">WhoChat</a>
-  <button onClick={handleLogout} >Logout</button>
+ {currentUser ?  <button onClick={handleLogout} >Logout</button> : ""}
 </div>
     </div>
   )

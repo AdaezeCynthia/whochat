@@ -14,7 +14,8 @@ const signInWithGoogle = () => {
     signInWithRedirect(auth, provider)
 }
 
-
+  //sign out
+  const logout = () => signOut(auth);
 
 
 
@@ -25,8 +26,7 @@ const signInWithGoogle = () => {
         logout
     }
 
-    //sign out
-     const logout =() => signOut(auth);
+  
 
 
 
