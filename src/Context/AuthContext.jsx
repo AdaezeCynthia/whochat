@@ -6,6 +6,8 @@ const AuthContext = createContext();
 export const AuthProvider = ({children}) => {
 
     const [currentUser, setCurentUser] =useState(null);
+    
+    const [loading, setLoading] =useState(true);
 //sign in with google 
 
 
@@ -39,6 +41,7 @@ const signInWithGoogle = () => {
     useEffect (() => {
              const unsubscribe =onAuthStateChanged(auth, (user) =>{
                 setCurentUser(user); 
+                setLoading (false);
              });
              return unsubscribe; 
     }, []);
@@ -46,7 +49,7 @@ const signInWithGoogle = () => {
 
     return(
         <AuthContext.Provider value={value }>
-            {children}
+            {!loading && children}
         </AuthContext.Provider>
     )
 }
