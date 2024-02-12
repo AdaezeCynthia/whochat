@@ -25,10 +25,12 @@ const Chatbox = () => {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const messages = [];
       querySnapshot.forEach((doc) => {
-        // messages.push(doc.data().name);
+         messages.push({ ...doc.data(), id: doc.id });
         console.log(doc.data());
       });
+      console.log(messages)
     });
+    return
   }, []);
   return (
     <div className="pb-44 pt-20 containerWrap ">
