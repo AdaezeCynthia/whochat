@@ -1,10 +1,30 @@
 import { useState } from "react";
+import { UserAuth } from "../Context/AuthContext";
+import { addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../Firebase";
 
 const Sendmessage = () => {
   const [value, setValue] = useState("");
-
-  const handleSm = (e) => {
+   const {currentUser} = UserAuth();
+  const handleSm = async  (e) => {
     e.preventDefault();
+    if(value.trim() === ""){
+      alert('Enter message!');
+      return;
+    }
+
+    try{
+          const{ uid, displayName, photoURL}= currentUser;
+          await addDoc(collection(db,'messages'),{
+            text: value ,
+            name: displayName,
+            avatar: photoURL,
+            createdAt: serverTimestamp(),
+            uid
+          })
+    } catch (error){
+      console.log(error);
+    }
     setValue("");
     console.log(value);
   };
