@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Message from "./Message";
-import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { collection, query, where, onSnapshot, orderBy, limit } from "firebase/firestore";
 import { db } from "../Firebase";
 
 const Chatbox = () => {
@@ -10,7 +10,11 @@ const Chatbox = () => {
   useEffect(() => {
     const q = query(
 
-      collection(db, "messages")
+      collection(db, "messages"),
+          orderBy('createdAt') ,
+          limit(50)   
+
+
       );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const messages = [];
