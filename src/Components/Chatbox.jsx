@@ -31,6 +31,7 @@ const Chatbox = () => {
       {messages.map((message) => (
         <Message key={message.id} message={message} />
       ))}
+      <div></div>
     </div>
   );
 };
