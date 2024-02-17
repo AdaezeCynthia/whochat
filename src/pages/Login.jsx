@@ -39,8 +39,7 @@ if(currentUser){
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there👋 </h1>
           <p className="py-6">
-          social media mavericks! 📱✨ Get ready to dive into a world of endless memes, epic stories, 
-          and all things share-worthy. Let's make your feed the envy of the digital universe! 🚀
+          Adaeze's world... world of endless memes and jokes 
           </p>
           <button onClick={handleLogin} className="btn btn-active btn-neutral">Login With Google</button>
         </div>
