@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { UserAuth } from "../Context/AuthContext";
-import { addDoc, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../Firebase";
 
 const Sendmessage = () => {
@@ -37,7 +37,7 @@ const Sendmessage = () => {
       <form onSubmit={handleSm} className="px-2 placeholder:containerWrap flex">
         <input
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={e => setValue(e.target.value)}
           className="input w-full focus:outline-none bg-gray-100
             rounded-r-none"
           type="text"
